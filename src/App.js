@@ -18,6 +18,8 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import AdminLayout from './layouts/AdminLayout';
 import AppLayout from './layouts/AppLayout'
 import AdminRoute from './auth/AdminRoute';
+import Contact from './pages/Contact';
+import About from './pages/About';
 
 // Sử dụng lazyload không import trực tiếp Page vào
 const Home = lazy(() => import("./pages/Home"));
@@ -59,6 +61,14 @@ function App() {
                 <Switch>
                   <Route path="/" exact>
                     <Home />
+                  </Route>
+
+                  <Route path="/contact">
+                    <Contact/>
+                  </Route>
+
+                  <Route path="/about" >
+                    <About/>
                   </Route>
 
                   <Route path="/courses/:category">

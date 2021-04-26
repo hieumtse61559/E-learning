@@ -13,11 +13,12 @@ function coursesReducer(state = initialState, action) {
     }
 
     case GET_COURSES_SUCCESS: {
+      console.log(action.payload.data)
       return {...state, isLoading: false, courses: action.payload.data}
     }
   
     case GET_COURSES_FAILURE: {
-      return {...state, isLoading: false, error: action.payload.error}
+      return {...state,courses: [], isLoading: false, error: action.payload.error}
     }
     default:
       return state

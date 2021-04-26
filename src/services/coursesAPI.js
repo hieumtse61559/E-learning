@@ -4,12 +4,13 @@ const coursesAPI = {
     return axiosClient.get("/QuanLyKhoaHoc/LayDanhSachKhoaHoc");
   },
 
-  getCourseByCategory: (category)=>{
+  getCoursesByCategory: (category)=>{
     const params = {
       maDanhMuc: category,
       maNhom: "GP01",
     }
-    return axiosClient.get("/QuanLyKhoaHoc/LayDanhSachKhoaHoc", {params})
+    console.log(params)
+    return axiosClient.get("/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc", {params})
   }
 }
 
